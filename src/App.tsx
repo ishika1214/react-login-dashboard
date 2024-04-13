@@ -9,9 +9,9 @@ import store from './store';
 export default function Apps() {
   return (
     <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename='/react-login-dashboard'>
       <Routes>
-        <Route path="/" element={<Login />}/>
+        <Route path="/react-login-dashboard" element={<Login />}/>
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>
