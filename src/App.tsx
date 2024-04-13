@@ -11,7 +11,7 @@ export default function Apps() {
     <Provider store={store}>
     <BrowserRouter basename='/react-login-dashboard'>
       <Routes>
-        <Route path="/react-login-dashboard" element={<Login />}/>
+        <Route path="/" element={<Login />}/>
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>

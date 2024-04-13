@@ -45,7 +45,7 @@ const Dashboard: React.FC = () => {
   console.log(loginData);
 
   const logoutclick = () => {
-    navigate("/react-login-dashboard");
+    navigate("/");
   };
   const [selectedUser, setSelectedUser] = useState<UserData | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
