@@ -1,13 +1,122 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #83677b; */
+  background-image: url();
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.input-container span {
+  color: red;
+}
+.add-popup {
+  width: 50%;
+  /* background-color: gainsboro !important; */
+}
+.loginpage {
+  text-align: center;
+  width: 500px;
+  margin: 0px auto;
+  background-color: gainsboro;
+  padding-bottom: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 10px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+}
+.button-container button {
+  background-color: #031941; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 10px;
+}
+table {
+  background: grey;
+  margin-top: 20px;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+}
+.dashboard-body {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  background: gainsboro;
+  min-height: 633px;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  padding: 5px;
+}
+.css-1ygcj2i-MuiTableCell-root {
+  font-size: large !important;
+  background-color: #666262 !important;
+  color: white !important;
+}
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: #666262 !important;
+}
+
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
+  border: 1px solid #666262 !important;
+
+  color: #666262 !important;
+}
+
+.css-zcbmsk-MuiButtonBase-root-MuiButton-root {
+  background-color: #666262 !important;
+}
+h1 {
+  margin: 0px !important;
+  color: #666262 !important;
+  font-style: initial !important;
+  font-size: 40px !important;
+}
+h2 {
+  color: #666262 !important;
+}
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
+  margin: 20px !important;
+}
+/* .button-log {
+  display: flex;
+  justify-content: space-between;
+} */
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  margin: 20px !important;
+}
+/* .css-rqglhn-MuiTable-root {
+  
+  width: 80% !important;
+} */
+.css-1d1r5q-MuiFormHelperText-root {
+  text-align: center !important;
+  color: rgb(224, 26, 26) !important;
+}
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+@media(max-width:480px){
+  .dashboard-body{
+    width: 580px;
+  }
+
 }
