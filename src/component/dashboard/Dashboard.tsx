@@ -296,28 +296,30 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard-body">
       <h1>Welcome to the Dashboard</h1>
-      {loginData.map((data, index) => (
+      {loginData.map((data:any, index:number) => (
         <div key={index}>
           <h2>USERNAME: {data.username}</h2>
           {/* <h2>PASSWORD: {data.password}</h2> */}
         </div>
       ))}
-      <div className="button-log">
+      <div className="button-log" >
         <Button
-          variant="outlined"
+          // variant="outlined"
           className="logout"
           type="button"
           onClick={logoutclick}
+          style={{color:"#666262 ", border:"1px solid #666262 "}}
         >
           Logout
         </Button>
-        <span> </span>
+        
         <Button
           variant="contained"
           onClick={() => {
             setSelectedUser(null);
             handleOpen();
           }}
+           style={{background:"#666262 "}}
         >
           Add
         </Button>
@@ -457,7 +459,7 @@ const Dashboard: React.FC = () => {
                 </span>
               )}
             </FormControl>
-            <Button variant="contained" color="secondary" type="submit">
+            <Button variant="contained" color="secondary" type="submit" style={{background:"#666262 "}}>
               {selectedUser !== null ? "Update" : "Save"}
             </Button>
           </form>
@@ -483,12 +485,13 @@ const Dashboard: React.FC = () => {
             variant="contained"
             color="secondary"
             onClick={handleConfirmDelete}
+            style={{background:"#666262 "}}
           >
             Delete
           </Button>
           <span> </span>
           <span> </span>
-          <Button variant="contained" onClick={handleCancelDelete}>
+          <Button variant="outlined" onClick={handleCancelDelete} style={{color:"#666262 ", border:"1px solid #666262 "}}>
             Cancel
           </Button>
         </div>
@@ -545,6 +548,7 @@ const Dashboard: React.FC = () => {
                     variant="contained"
                     color="secondary"
                     onClick={() => handleEdit(user)}
+                    style={{background:"#666262 ",}}
                   >
                     Edit
                   </Button>
@@ -553,6 +557,7 @@ const Dashboard: React.FC = () => {
                     variant="contained"
                     color="secondary"
                     onClick={() => handleDelete(index)}
+                    style={{background:"#666262 ",}}
                   >
                     Delete
                   </Button>
