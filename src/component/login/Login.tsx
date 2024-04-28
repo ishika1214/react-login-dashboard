@@ -115,7 +115,7 @@ const Login = () => {
             display: "flex",
             alignItems: "center",
             textAlign: "center",
-            paddingLeft: "5px",
+            justifyContent:"center"
           }}
         >
           {!password && hasError && (
