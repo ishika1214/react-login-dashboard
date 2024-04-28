@@ -308,7 +308,7 @@ const Dashboard: React.FC = () => {
           className="logout"
           type="button"
           onClick={logoutclick}
-          style={{color:"#666262 ", border:"1px solid #666262 "}}
+          style={{color:"#666262 ", border:"1px solid #666262",height:"35px"}}
         >
           Logout
         </Button>

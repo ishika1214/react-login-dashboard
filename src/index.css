@@ -92,10 +92,11 @@ h2 {
 .css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
   margin: 20px !important;
 }
-/* .button-log {
+.button-log {
   display: flex;
-  justify-content: space-between;
-} */
+  align-items: center;
+  justify-content:space-between;
+}
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
   margin: 20px !important;
 }
