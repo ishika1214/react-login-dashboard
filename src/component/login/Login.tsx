@@ -71,15 +71,28 @@ const Login = () => {
               }
             }}
           />
-          
         </div>
-        {!username && hasError && (
-          <FormHelperText style={{color:"red"}}>Please Enter Email</FormHelperText>
-        )}
-        {!validateEmail(username) && hasError && username && (
-          <FormHelperText style={{color:"red"}}>Please Enter valid email</FormHelperText>
-        )}
-        
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textAlign: "center",
+            paddingLeft: "5px",
+            justifyContent:"center"
+          }}
+        >
+          {!username && hasError && (
+            <FormHelperText style={{ color: "red" }}>
+              Please Enter Email
+            </FormHelperText>
+          )}
+          {!validateEmail(username) && hasError && username && (
+            <FormHelperText style={{ color: "red" }}>
+              Please Enter valid email
+            </FormHelperText>
+          )}
+        </div>
+
         <div className="input-container">
           <label>Password </label>
           <input
@@ -97,13 +110,27 @@ const Login = () => {
             {showPassword ? "Hide" : "Show"}
           </button>
         </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textAlign: "center",
+            paddingLeft: "5px",
+          }}
+        >
+          {!password && hasError && (
+            <FormHelperText style={{ color: "red" }}>
+              Please Enter password
+            </FormHelperText>
+          )}
+          {!validatePassword(password) && hasError && password && (
+            <FormHelperText style={{ color: "red" }}>
+              Password should conatain 1 upperCase 1 lower case a digit and a
+              special character
+            </FormHelperText>
+          )}
+        </div>
 
-        {!password && hasError && (
-          <FormHelperText style={{color:"red"}}>Please Enter password</FormHelperText>
-        )}
-        {!validatePassword(password) && hasError && password && (
-          <FormHelperText style={{color:"red"}}>Password should conatain 1 upperCase 1 lower case a digit and a special character</FormHelperText>
-        )}
         <div className="button-container">
           <button onClick={handleClick}>submit</button>
         </div>

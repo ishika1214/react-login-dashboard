@@ -96,6 +96,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content:space-between;
+  padding-bottom: 15px;
 }
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
   margin: 20px !important;
@@ -114,7 +115,9 @@ h2 {
   margin-top: 15px;
   gap: 10px;
 }
-
+.form{
+  
+}
 @media(max-width:480px){
   .dashboard-body{
     width: 580px;
