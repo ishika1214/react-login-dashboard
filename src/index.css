@@ -55,10 +55,10 @@ table {
 }
 .dashboard-body {
   margin: 0 auto;
-  width: 100%;
+  width: 98%;
   text-align: center;
   background: gainsboro;
-  min-height: 633px;
+  min-height: 700px;
   box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
   padding: 5px;
 }
@@ -97,6 +97,7 @@ h2 {
   align-items: center;
   justify-content:space-between;
   padding-bottom: 15px;
+  padding: 15px;
 }
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
   margin: 20px !important;
@@ -115,9 +116,7 @@ h2 {
   margin-top: 15px;
   gap: 10px;
 }
-.form{
-  
-}
+
 @media(max-width:480px){
   .dashboard-body{
     width: 580px;
