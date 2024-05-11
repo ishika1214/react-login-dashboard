@@ -27,6 +27,7 @@ import { Search } from "@mui/icons-material";
 
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
+import "./dashboard.css";
 
 interface UserData {
   name: string;
@@ -295,31 +296,35 @@ const Dashboard: React.FC = () => {
   };
   return (
     <div className="dashboard-body">
-      <h1>Welcome to the Dashboard</h1>
-      {loginData.map((data:any, index:number) => (
-        <div key={index}>
-          <h2>USERNAME: {data.username}</h2>
+      <h1 className="welcome-msg">Welcome to the Dashboard</h1>
+      {loginData.map((data: any, index: number) => (
+        <div key={index} className="user-name-container">
+          <h2 className="username">USERNAME: {data.username}</h2>
           {/* <h2>PASSWORD: {data.password}</h2> */}
         </div>
       ))}
-      <div className="button-log" >
+      <div className="button-log">
         <Button
           // variant="outlined"
           className="logout"
           type="button"
           onClick={logoutclick}
-          style={{color:"#666262 ", border:"1px solid #666262",height:"35px"}}
+          style={{
+            color: "#666262 ",
+            border: "1px solid #666262",
+            height: "35px",
+          }}
         >
           Logout
         </Button>
-        
+
         <Button
           variant="contained"
           onClick={() => {
             setSelectedUser(null);
             handleOpen();
           }}
-           style={{background:"#666262 "}}
+          style={{ background: "#666262 " }}
         >
           Add
         </Button>
@@ -362,6 +367,7 @@ const Dashboard: React.FC = () => {
               onChange={handleFormChange}
               error={!!formErrors.name}
               fullWidth
+              className="feild"
             />
             <TextField
               label="Designation"
@@ -370,8 +376,9 @@ const Dashboard: React.FC = () => {
               onChange={handleFormChange}
               error={!!formErrors.designation}
               fullWidth
+              className="feild"
             />
-            <FormControl fullWidth error={!!formErrors.gender}>
+            <FormControl fullWidth error={!!formErrors.gender} className="feild">
               <InputLabel id="gender-label">Gender</InputLabel>
               <Select
                 labelId="gender-label"
@@ -379,6 +386,7 @@ const Dashboard: React.FC = () => {
                 name="gender"
                 value={selectedUser ? selectedUser.gender : formData.gender}
                 onChange={handleUserChange}
+                
               >
                 <MenuItem value="">Select Gender</MenuItem>
                 <MenuItem value="male">Male</MenuItem>
@@ -391,7 +399,7 @@ const Dashboard: React.FC = () => {
                 </span>
               )}
             </FormControl>
-            <FormControl>
+            <FormControl  className="feild">
               <InputLabel id="join-date">Join Date</InputLabel>
               <br />
               <br />
@@ -407,7 +415,7 @@ const Dashboard: React.FC = () => {
             </FormControl>
 
             <InputLabel id="position">Position</InputLabel>
-            <FormControl fullWidth error={!!formErrors.position}>
+            <FormControl fullWidth error={!!formErrors.position}  className="feild">
               <FormControlLabel
                 control={
                   <Checkbox
@@ -438,7 +446,7 @@ const Dashboard: React.FC = () => {
                 }
                 label="Designer"
               />
-              <FormControlLabel
+              <FormControlLabel  className="feild"
                 control={
                   <Checkbox
                     {...label}
@@ -459,7 +467,12 @@ const Dashboard: React.FC = () => {
                 </span>
               )}
             </FormControl>
-            <Button variant="contained" color="secondary" type="submit" style={{background:"#666262 "}}>
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              style={{ background: "#666262 " }}
+            >
               {selectedUser !== null ? "Update" : "Save"}
             </Button>
           </form>
@@ -485,13 +498,17 @@ const Dashboard: React.FC = () => {
             variant="contained"
             color="secondary"
             onClick={handleConfirmDelete}
-            style={{background:"#666262 "}}
+            style={{ background: "#666262 " }}
           >
             Delete
           </Button>
           <span> </span>
           <span> </span>
-          <Button variant="outlined" onClick={handleCancelDelete} style={{color:"#666262 ", border:"1px solid #666262 "}}>
+          <Button
+            variant="outlined"
+            onClick={handleCancelDelete}
+            style={{ color: "#666262 ", border: "1px solid #666262 " }}
+          >
             Cancel
           </Button>
         </div>
@@ -510,45 +527,34 @@ const Dashboard: React.FC = () => {
         <CircularProgress color="inherit" />
       </Backdrop>
 
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Designation</TableCell>
-            <TableCell>Join Date</TableCell>
-            <TableCell>Gender</TableCell>
-            <TableCell>Position</TableCell>
-            <TableCell>Actions</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        </TableHead>
-        {/* {users.length=== 0?(
-          <p>No Data available</p>
-        ):(
-        */}
-        <TableBody>
-          {users
-            .filter(
-              (user) =>
-                user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                user.designation
-                  .toLowerCase()
-                  .includes(searchQuery.toLowerCase())
-            )
-            .map((user, index) => (
-              <TableRow key={index}>
-                <TableCell>{user.name}</TableCell>
-                <TableCell>{user.designation}</TableCell>
-                <TableCell>{user.joinDate}</TableCell>
-                <TableCell>{user.gender}</TableCell>
-                <TableCell>{user.position}</TableCell>
+      <div className="dashboard-table">
+        {users
+          .filter(
+            (user) =>
+              user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              user.designation.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+          .map((user, index) => (
+            <div key={index} className="item">
+              <div className="name">
+                Employee :
+                <span className="Designation"> {user.name}{" "} ({user.designation} )</span>
+              </div>
+              <div className="employee-actions">
+                <div className="employee-detail">
+                  <div className="p Joining">Joining-Date : {user.joinDate}</div>
+                  <div className="p Gender">Gender : {user.gender}</div>
+                  <div className="p position">position : {user.position}</div>
+                </div>
 
-                <TableCell>
+                <div className="action-button">
                   <Button
                     variant="contained"
                     color="secondary"
                     onClick={() => handleEdit(user)}
-                    style={{background:"#666262 ",}}
+                    style={{ background: "#666262 " }}
+                    className="dash-button"
+
                   >
                     Edit
                   </Button>
@@ -557,19 +563,17 @@ const Dashboard: React.FC = () => {
                     variant="contained"
                     color="secondary"
                     onClick={() => handleDelete(index)}
-                    style={{background:"#666262 ",}}
+                    style={{ background: "#666262 " }}
+                    className="dash-button"
                   >
                     Delete
                   </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
-        {/*                    
-           )
-          } */}
-      </Table>
-      <TableContainer>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+      {/* <TableContainer>
         {(users.length === 0 ||
           users.every(
             (user) =>
@@ -578,7 +582,7 @@ const Dashboard: React.FC = () => {
                 .toLowerCase()
                 .includes(searchQuery.toLowerCase())
           )) && <div style={{ fontSize: "20px" }}>No employees found!</div>}
-      </TableContainer>
+      </TableContainer> */}
     </div>
   );
 };

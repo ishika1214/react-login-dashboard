@@ -1,0 +1,65 @@
+.button-log {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-bottom: 15px;
+    padding: 15px;
+  }
+  .dashboard-body {
+    margin: 0 auto;
+    /* width: 99%; */
+    text-align: center;
+    background: gainsboro;
+    min-height: 700px;
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+    padding: 5px;
+  }
+  .item{
+    text-align: left;
+    background: grey;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  }
+  .employee-actions{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  .name{
+    font-size: large;
+  }
+  .Designation{
+    font-weight: bold;
+  }
+  .feild{
+    margin-bottom: 10px !important;
+  }
+  @media(max-width:480px){
+    .dashboard-body{
+        padding: 5px;
+    }
+    .p{
+        font-size: smaller;
+    }
+    .name{
+        font-size: small;
+        margin-bottom: 6px;
+      }
+      .action-button{
+        text-align: right;
+      }
+      .dash-button{
+        margin-bottom: 10px !important;
+        width: 15px;
+        height: 29px;
+        font-size: 13px !important;
+      }
+      .confirmation-popup {
+        width: 230px !important;
+      }
+      .add-popup {
+        width: 230px !important;
+      }
+  }
